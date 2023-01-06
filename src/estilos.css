@@ -1,0 +1,71 @@
+/* Contenedor de películas */
+.contenedor-peliculas{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+.carta-pelicula{
+    padding: 5px;
+    margin: 10px;
+}
+
+.carta-pelicula img{
+    width: 100%;
+    border-radius: 25px;
+}
+.carta-pelicula img:hover{
+    transform: scale(1.15);
+    transition: all 0.5s;
+}
+
+.carta-pelicula .info-pelicula{
+    text-align: center;
+    position: relative;
+}
+.titulo{
+    text-align: center;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.inline{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 15px;
+}
+
+@media screen and (max-width: 1080px){  
+    .contenedor-peliculas{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 930px){  
+    .contenedor-peliculas{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media screen and (max-width: 600px){  
+    .contenedor-peliculas{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+/* Vista de detalle de película */
+
+
+.contenedor-detalle-pelicula{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin: auto;
+    width: 75%;
+}
+
+.info-detalle-pelicula{
+    font-size: 1.2rem;
+}
