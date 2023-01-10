@@ -1,11 +1,10 @@
-import './Spinner.css'
+import './Spinner.css';
+import {FaSpinner} from 'react-icons/fa';
 
 const Spinner = () => {
     return(
-        <div className='hola'>
-
-        
-            <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+        <div className='spinner'>
+            <FaSpinner className='spinning' size={60}/>
         </div>
     )
 }
