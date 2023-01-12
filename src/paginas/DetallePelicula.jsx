@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
 import Spinner from "../componentes/Spinner/Spinner";
+import placeholder from "../imagenes/placeholder.png";
 
 const DetallePelicula = () => {
 
@@ -38,7 +39,7 @@ const DetallePelicula = () => {
         return null;
       }
 
-    const imageUrl = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
+    const imageUrl = movie.poster_path ? "https://image.tmdb.org/t/p/w500" + movie.poster_path: placeholder;
     return (
       <div className="contenedor-detalle-pelicula">
         <div>

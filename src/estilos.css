@@ -92,16 +92,18 @@
 }
 
 .boton-formulario{
-    margin-left: 10px;
-    border-radius: 10px;
-    padding: 8px;
-    background-color: #f5f5f5;
-    cursor: pointer;
-    background-color: rgba(88, 88, 209, 0.808);
-    color: white;
+    position: absolute;    
+    right: 25%;
+    top: 95px;   
 }
 
-.boton-formulario:hover{
-    background-color: #f5f5f5;
-    color: blue;
+/* Contenedor Empty */
+.empty{
+    display: flex;
+    justify-content: center;
+    margin : 80px;
+    height: 100vh;
+    font-size: 2rem;
+    font-weight: bold;
 }
+

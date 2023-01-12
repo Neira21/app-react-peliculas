@@ -28,6 +28,7 @@ const BuscadorPeliculas = () =>{
                 <input 
                     className="entrada-busqueda" 
                     placeholder="Buscar película" 
+                    aria-label='Search'
                     type="text" 
                     value={search|| ''}
                     onChange={(e) => {
@@ -38,9 +39,9 @@ const BuscadorPeliculas = () =>{
                     }}
                 />
 
-                <button className="boton-formulario" type="submit" >
-                    <FaSearch size={30}/>
-                </button>
+                
+                    <FaSearch className='boton-formulario' color='black' size={30}/>
+                
             </div>
         </form>
             
