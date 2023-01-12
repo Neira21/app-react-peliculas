@@ -9,20 +9,16 @@ function useQuery(){
 
 
 const BuscadorPeliculas = () =>{
-    const [searchText, setSearchText] = useState("");
+    
     const navigate = useNavigate();
     
     const handleSubtmit = (e) => {
         e.preventDefault();
-        navigate(`/?search=${searchText}`)
+        
     }
 
     const query = useQuery();
     const search = query.get("search");
-
-    useEffect(() => {
-        setSearchText(search || "");
-    }, [search])
 
 
     return (
@@ -33,9 +29,10 @@ const BuscadorPeliculas = () =>{
                     className="entrada-busqueda" 
                     placeholder="Buscar película" 
                     type="text" 
-                    value={searchText} 
-                    onChange={(e) =>{
-                        setSearchText(e.target.value);
+                    value={search|| ''}
+                    onChange={(e) => {
+                        const value = e.target.value;
+                        navigate(`/?search=${value}`);
                         //const value = e.target.value;
                         //para reemplazar toda la url, se pasa un 2do parametro que es un objeto con la propiedad replace en true
                     }}

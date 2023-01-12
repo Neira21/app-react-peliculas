@@ -17,6 +17,27 @@ const ContenedorPeliculas = ({search}) => {
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
 
+    /*
+        useEffect(() => {
+            const ObtenerPeliculas = async (url, search) => {
+                const results = await axios.get(`${API_URL}/${url}`, {
+                    params: {
+                        api_key: API_KEY,
+                        language: "es-ES",
+                        query: search,
+                        page: page
+                    }
+                })
+                setPeliculas(prevPeliculas => prevPeliculas.concat(results.data.results))
+                setHasMore(results.data.page < results.data.total_pages);
+                setIsLoading(false);
+            };
+            setIsLoading(true);
+            const searchUrl = search ? `search/movie?query=${search}` : "discover/movie";
+            ObtenerPeliculas(searchUrl, search)
+        }, [search, page]);
+    */
+
     const ObtenerPeliculas = async (url, search) => {
         const results = await axios.get(`${API_URL}/${url}`, {
             params: {
