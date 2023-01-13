@@ -1,15 +1,10 @@
 import ContenedorPeliculas from "../componentes/ContenedorPeliculas";
 import BuscadorPeliculas from "../componentes/BuscadorPeliculas";
-import { useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import {useDebounce} from '../hooks/useDebounce';
 
-function useQuery(){
-    return new URLSearchParams(useLocation().search);   
-}
-
-
 const VistaPeliculas = () => {
-    const query = useQuery();
+    const [query] = useSearchParams();
     const search = query.get("search");
     const searchDebounced = useDebounce(search, 500);
     

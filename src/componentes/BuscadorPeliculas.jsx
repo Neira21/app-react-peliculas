@@ -1,26 +1,13 @@
 import {FaSearch} from 'react-icons/fa'
-import {useEffect, useState} from 'react'
-import {useNavigate} from 'react-router-dom'
-import {useLocation} from 'react-router-dom'
-
-function useQuery(){
-    return new URLSearchParams(useLocation().search);   
-}
-
+import {useSearchParams} from 'react-router-dom'
 
 const BuscadorPeliculas = () =>{
-    
-    const navigate = useNavigate();
-    
-    const handleSubtmit = (e) => {
-        e.preventDefault();
-        
-    }
-
-    const query = useQuery();
+    const [query, setQuery] = useSearchParams();
     const search = query.get("search");
-
-
+        
+    const handleSubtmit = (e) => {
+        e.preventDefault();    
+    }
     return (
         
         <form className="formulario-contenedor" onSubmit={handleSubtmit}>
@@ -33,19 +20,15 @@ const BuscadorPeliculas = () =>{
                     value={search|| ''}
                     onChange={(e) => {
                         const value = e.target.value;
-                        navigate(`/?search=${value}`);
+                        setQuery( {search: value})
+                        //navigate(`/?search=${value}`);
                         //const value = e.target.value;
                         //para reemplazar toda la url, se pasa un 2do parametro que es un objeto con la propiedad replace en true
                     }}
                 />
-
-                
-                    <FaSearch className='boton-formulario' color='black' size={30}/>
-                
+                <FaSearch className='boton-formulario' color='black' size={30}/>
             </div>
         </form>
-            
-        
     )
 }
 

@@ -24,7 +24,6 @@ const DetallePelicula = () => {
         setMovie(data);
     }
     
-    
     useEffect(() => {
         setIsLoading(true);
         obtenerDetallePelicula(`movie/${movieId}`)
